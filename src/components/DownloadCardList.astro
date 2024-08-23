@@ -42,6 +42,12 @@ const {cards} = Astro.props;
     gap: 4rem;
 }
 
+@media (max-width: 768px) {
+    .touhou-card-list {
+        grid-template-columns: 1fr;
+    }
+}
+
 .touhou-card {
     display: flex;
     flex-direction: column;

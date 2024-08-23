@@ -19,7 +19,15 @@ const {title, subtitle} = Astro.props;
     background-image: url('/images/touhou-banner.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     height: 512px;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .touhou-banner {
+        height: 256px;
+    }
 }
 
 .touhou-banner .overlay {
