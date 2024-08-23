@@ -1,16 +1,16 @@
 ---
-
+import Layout from "../layouts/Layout.astro";
+import Banner from "../components/Banner.astro";
+import Container from "../components/Container.astro";
+import DownloadCardList from "../components/DownloadCardList.astro";
+import { cards } from "../data/downloadCardList";
+import Footer from "../components/Footer.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout subtitle="首页">
+  	<Banner title="东方杀下载站" subtitle="基于开源项目 Qsanguosha 的包含东方Project角色的三国杀游戏。" />
+	<Container>
+		<DownloadCardList cards={cards} />
+	</Container>
+	<Footer></Footer>
+</Layout>

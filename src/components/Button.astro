@@ -1,0 +1,32 @@
+---
+interface Props {
+    text: string;
+    url: string;
+}
+const {text, url} = Astro.props;
+---
+
+<a href={url} target="_blank" rel="noopener noreferrer">
+    <button>{text}</button>
+</a>
+
+<style>
+button {
+    background-color: #0070f3;
+    color: white;
+    height: 2.5rem;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+    white-space: nowrap;
+}
+
+button:hover {
+    background-color: #0053b3;
+}
+</style>

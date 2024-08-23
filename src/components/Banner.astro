@@ -1,0 +1,46 @@
+---
+interface Props {
+    title: string;
+    subtitle: string;
+}
+
+const {title, subtitle} = Astro.props;
+---
+
+<div class="touhou-banner">
+    <div class="overlay">
+        <h1 class="title">{title}</h1>
+        <p class="subtitle">{subtitle}</p>
+    </div>
+</div>
+
+<style>
+.touhou-banner {
+    background-image: url('/images/touhou-banner.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 512px;
+}
+
+.touhou-banner .overlay {
+    background-color: var(--overlay-color);
+    color: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    text-shadow: var(--text-shadow);
+}
+
+.touhou-banner .title {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.touhou-banner .subtitle {
+    font-size: 1.5rem;
+    margin: 0;
+}
+</style>

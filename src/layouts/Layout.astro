@@ -1,0 +1,64 @@
+---
+interface Props {
+    subtitle: string;
+}
+
+interface siteConfigType {
+    title: string;
+    subtitle: string;
+}
+
+const siteConfig : siteConfigType = {
+    title: "东方杀下载站",
+    subtitle: Astro.props.subtitle
+}
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{siteConfig.subtitle} - {siteConfig.title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+    /* normalize */
+    body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        line-height: 1.5;
+        color: #333;
+    }
+    a {
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: none;
+    }
+    /* global styles */
+    :root{
+        --overlay-color: rgba(0, 0, 0, 0.2);
+        --text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+        --card-border: 1px solid #eaeaea;
+        --card-shadow__hover: 0 0 10px rgba(0, 0, 0, 0.1);
+        --card-border-radius: 10px;
+        --card-transition: all 0.3s;
+        --card-transform__hover: translateY(-5px);
+    }
+    /* custom cursor */
+    body {
+        cursor: url('/cursor/Arrow.gif'), default;
+        
+    }
+
+    a, button{
+        cursor: url('/cursor/Hand.gif'), pointer !important;
+    }
+</style>
